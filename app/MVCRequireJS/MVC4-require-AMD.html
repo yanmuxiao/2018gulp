@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meata name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/myjs.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+
+	// 五、AMD模块的写法
+	/*
+	require.js加载的模块，采用AMD规范。也就是说，模块必须按照AMD的规定来写。
+
+	具体来说，就是模块必须采用特定的define()函数来定义。如果一个模块不依赖
+	其他模块，那么可以直接定义在define()函数之中。
+
+	假定现在有一个math.js文件，它定义了一个math模块。那么，math.js就要这样写：
+	 */
+
+	// math.js
+	// 　　define(function (){
+	// 　　　　var add = function (x,y){
+	// 　　　　　　return x+y;
+	// 　　　　};
+	// 　　　　return {
+	// 　　　　　　add: add
+	// 　　　　};
+	// 　　});
+
+	// 加载方法
+	// main.js
+　　
+	require(['math'], function (math){
+　　　　alert(math.add(1,1));
+　　});
+
+
+	// 如果这个模块math.js还依赖其他模块，那么define()函数的第一个
+	// 参数，必须是一个数组，指明该模块的依赖性。
+
+	define(['myLib'], function(myLib){
+　　　　function foo(){
+　　　　　　myLib.doSomething();
+　　　　}
+　　　　return {
+　　　　　　foo : foo
+　　　　};
+　　});
+
+	// 当require()函数加载上面这个模块的时候，就会先加载myLib.js文件。
+
+	// 六、加载非规范的模块
+	/*
+	理论上，require.js加载的模块，必须是按照AMD规范、用define()函数定义的模块。但是实际上，虽然已经有一部分流行的函数库（比如jQuery）符合AMD规范，更多的库并不符合。那么，require.js是否能够加载非规范的模块呢？
+
+	回答是可以的。
+
+	这样的模块在用require()加载之前，要先用require.config()方法，定义它们的一些特征。
+	举例来说，underscore和backbone这两个库，都没有采用AMD规范编写。如果要加载它们的话，必须先定义它们的特征。
+
+
+	*/
+
+　 require.config({
+　　　　shim: {
+
+　　　　　　'underscore':{
+　　　　　　　　exports: '_'
+　　　　　　},
+　　　　　　'backbone': {
+　　　　　　　　deps: ['underscore', 'jquery'],
+　　　　　　　　exports: 'Backbone'
+　　　　　　}
+　　　　}
+　　});
+
+/*
+	require.config()接受一个配置对象，这个对象除了有前面说过的paths属性之外，还有一个shim属性，专门用来配置不兼容的模块。具体来说，每个模块要定义
+	（1）exports值（输出的变量名），表明这个模块外部调用时的名称；
+	（2）deps数组，表明该模块的依赖性。
+
+	比如，jQuery的插件可以这样定义：
+*/
+
+	shim: {
+　　　　'jquery.scroll': {
+　　　　　　deps: ['jquery'],
+　　　　　　exports: 'jQuery.fn.scroll'
+　　　　}
+　　}
+
+
+
+	// 七、require.js插件
+
+	// require.js还提供一系列插件，实现一些特定的功能。
+
+	// domready插件，可以让回调函数在页面DOM结构加载完成后再运行。
+	require(['domready!'], function (doc){
+　　　　// called once the DOM is ready
+　　});
+
+
+
+	// text和image插件，则是允许require.js加载文本和图片文件。
+	　define([
+　　　　'text!review.txt',
+　　　　'image!cat.jpg'
+　　　　],
+
+　　　　function(review,cat){
+　　　　　　console.log(review);
+　　　　　　document.body.appendChild(cat);
+　　　　}
+　　);
+
+
+	// 类似的插件还有json和mdown，用于加载json文件和markdown文件。
+
+    </script>
+</body>
+</html>

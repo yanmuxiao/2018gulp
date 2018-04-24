@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html style="width: 100%; overflow-x: hidden;" id='onsiteHtml'>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" id="scaleMeta" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<!-- IOS中Safari允许全屏浏览： -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<!-- IOS中Safari顶端状态条样式： -->
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<!-- 忽略将数字变为电话号码： -->
+<meta content="telephone=no" name="format-detection">
+<!-- 浏览器浏览模式转换==>极速、兼容、IE模式 -->
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<title>search</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="../css/normalize.css">
+<link rel="stylesheet" href="../css/font/iconfont.css">
+<link rel="stylesheet" href="../css/rui.css">
+<link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <script type="text/javascript">
+		(function(){
+			function htmlFontSize(){
+		    	document.getElementById('onsiteHtml').style.fontSize = document.body.clientWidth / 10 + 'px';
+	    	}
+	    	htmlFontSize();
+	    	window.onresize = function(){
+	    		setTimeout(htmlFontSize,200);
+	    	};
+		})();
+	</script>
+	<div class="containter">
+		<div class="main-content">
+			<!--头部bgein -->
+			<header class="RUI-head RUI-search-head">
+				<div class="wk-b-ap RUI-search">
+					<i class="iconfont icon-left1"></i>
+					<input class="b-flex RUI-text search-input" placeholder="请输入搜索内容"></input>
+					<i class="search-cancle delete-btn iconfont icon-closefill"></i>
+					<i class="search-icon iconfont icon-search1"></i>
+					<span class="search-btn">搜索</span>
+				</div>
+			</header>
+			<!--头部end -->
+			
+			<div class="page-content" id="RUI-toucher">
+				<div class="RUI-toucher"><!-- toucher -->
+					<!-- 内容区 -->
+
+					<div class="hot-history">
+						<div class="wk-b-ap hot-search">
+							<div class="hot-title">热门搜索: </div>
+							<div class="b-flex hot-word" id="hot-word">
+								<ul class="hot-list-wrap">
+									<li>宝马</li>
+									<li>移动电源</li>
+									<li>小米手机</li>
+									<li>苹果iphone</li>
+									<li>魅族</li>
+									<li>魅族</li>
+									<li>魅族</li>
+									<li>魅族</li>
+									<li>魅族</li>
+								</ul>
+							</div>
+						</div>
+						<!-- <div style="height: .4rem;background-color: #fff;"></div> -->
+						<div class="history-search">
+							<h5 class="history-title">历史记录</h5>
+							<ul class="RUI-listview history-lv">
+								<li>
+									<p class="lv-content line-clamp">移动电源1</p>
+									<i class="lv-foot iconfont icon-delete"></i>
+								</li>
+								<li>
+									<p class="lv-content line-clamp">移动电源2</p>
+									<i class="lv-foot iconfont icon-delete"></i>
+								</li>
+								<li>
+									<p class="lv-content line-clamp">移动电源3</p>
+									<i class="lv-foot iconfont icon-delete"></i>
+								</li>
+								<li>
+									<p class="lv-content line-clamp">移动电源4</p>
+									<i class="lv-foot iconfont icon-delete"></i>
+								</li>
+								<li>
+									<p class="lv-content line-clamp">移动电源5</p>
+									<i class="lv-foot iconfont icon-delete"></i>
+								</li>
+								<li>
+									<p class="lv-content line-clamp">移动电源6</p>
+									<i class="lv-foot iconfont icon-delete"></i>
+								</li>
+								<li>
+									<p class="lv-content line-clamp">移动电源7</p>
+									<i class="lv-foot iconfont icon-delete"></i>
+								</li>
+								<li>
+									<p class="lv-content line-clamp">移动电源8</p>
+									<i class="lv-foot iconfont icon-delete"></i>
+								</li>
+								<li>
+									<p class="lv-content line-clamp">移动电源9</p>
+									<i class="lv-foot iconfont icon-delete"></i>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- 内容区 -->
+				</div><!-- toucher -->
+			</div><!-- page-content -->
+
+		</div><!-- main-content -->
+    </div><!-- containter -->
+</body>
+	<script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="../js/toucher.js"></script>
+	<script type="text/javascript" src="../js/layer/layer.js"></script>
+	<script type="text/javascript" src="../js/XjQuery.js"></script>
+	<script type="text/javascript">
+
+		// actionsheet 验证函数
+		function validateFn(){
+			if($('.search-input').val().length > 0){
+				return true;
+			}else{
+				layer.open({
+					style: 'border:none; background-color:rgba(51,51,51,0.8); color:#fff;',
+					content: '搜索内容不能为空！',
+					time: 1
+				});
+				return false;
+			}
+		}
+
+		XjQuery.inputDelete('.search-input');
+        XjQuery.actionMask('.search-btn', {
+        	// asList : ['提交', '保存'],
+        	validateFn : validateFn,
+        	asFn1 : function(){
+        		console.log('提交');
+        	},
+        	asFn2 : function(){
+        		console.log('保存');
+        	}
+        });
+
+
+        $('.history-lv .icon-delete').each(function(){
+        	util.toucher(this).on('singleTap', function(){
+        		$(this).parent().remove();
+        	})
+        })
+
+
+        XjQuery.swipeFixedHorizon('hot-word','.hot-list-wrap')
+
+
+	</script>
+</html>

@@ -1,0 +1,61 @@
+/*-webkit-box*/
+.wk-b {
+	display: -webkit-box;
+}
+.wk-b-orient {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+.wk-b-ap {
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+}
+.b-align {
+	-webkit-box-align: center;
+}
+.b-pack {
+	-webkit-box-pack: center;
+}
+.b-flex {
+	-webkit-box-flex: 1;
+}
+
+/*-webkit-box*/
+
+/*header begin*/
+.RUI-head-blank {
+	height: 1.95rem;
+}
+.RUI-head {
+
+	/*position:fixed;left:0;top:0;z-index:1000;*/width: 100%;
+	height: 1.95rem;
+}
+.head-box {
+	width: 100%;
+	height: 100%;
+	background-color: #e50e09;
+}
+.head-title {
+	margin: 0;
+	font-size: 18px;
+	color: #fff;
+	text-align: center;
+	-webkit-box-flex: 1;
+}
+.head-left {
+	width: 64px;
+	height: 100%;
+	color: #fff;
+	font-size: 18px;
+}
+.head-right {
+	position: relative;
+	width: 64px;
+	height: 100%;
+	color: #fff;
+	font-size: 18px;
+}
+
+/*header end*/

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html style="width: 100%; overflow-x: hidden;" id='onsiteHtml'>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" id="scaleMeta" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<!-- IOS中Safari允许全屏浏览： -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<!-- IOS中Safari顶端状态条样式： -->
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<!-- 忽略将数字变为电话号码： -->
+<meta content="telephone=no" name="format-detection">
+<!-- 浏览器浏览模式转换==>极速、兼容、IE模式 -->
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<title>login</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="../css/normalize.css">
+<link rel="stylesheet" href="../css/font/iconfont.css">
+<link rel="stylesheet" href="../css/rui.css">
+</head>
+<body>
+    <script type="text/javascript">
+		(function(){
+			function htmlFontSize(){
+		    	document.getElementById('onsiteHtml').style.fontSize = document.body.clientWidth / 10 + 'px';
+	    	}
+	    	htmlFontSize();
+	    	window.onresize = function(){
+	    		setTimeout(htmlFontSize,200);
+	    	};
+		})();
+	</script>
+
+	<div class="containter">
+		<div class="main-content">
+			<!--头部bgein -->
+			<header class="RUI-head">
+				<div class="wk-b-ap head-box">
+					<div class="wk-b-ap head-left">
+						<i class="iconfont icon-left1"></i>
+					</div>
+					<h2 class="wk-b-ap head-title line-clamp">
+						<span>登录</span>
+					</h2>
+					<div class="wk-b-ap head-right">
+						<span>注册</span>
+					</div>
+				</div>
+			</header>
+			<!--头部end -->
+
+			<div class="page-content" id="RUI-toucher">
+				<div class="RUI-toucher"><!-- toucher -->
+
+
+					<form action="" id="RUI-form">
+						<ul class="RUI-listview">
+							<li>
+								<p>账号：</p>
+								<input type="text" class="lv-input input-delete validate" data-pattern="user" name="" placeholder="点击填写">
+								<i class="delete-btn iconfont icon-closefill"></i>
+							</li>
+							<li>
+								<p>密码：</p>
+								<input type="password" class="lv-input input-delete validate" data-pattern="password" name="" placeholder="6-32位字母数字组合">
+								<i class="delete-btn iconfont icon-closefill"></i>
+							</li>
+						</ul>
+
+						<div>
+							<input type="submit" id="submitBtn"  class="slim-border RUI-b-btn" value="登录" style="margin-top: 3rem;">
+						</div>
+						<!-- <button class="slim-border RUI-b-btn" style="margin-top: 3rem;">登录</button> -->
+					</form>
+
+
+
+				</div><!-- toucher -->
+			</div>
+		</div>
+	</div>
+
+    
+</body>
+	<script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="../js/toucher.js"></script>
+	<script type="text/javascript" src="../js/XjQuery.js"></script>
+	<script type="text/javascript">
+		XjQuery.inputDelete('.input-delete');
+
+		// loading ==> loading : true
+		$('.head-right').click(function(){
+			XjQuery.mask({
+				hideAuto : true,
+				timeout : 20000,
+				loading : true,
+				style : ''
+			})
+		})
+
+		
+		// 正则
+		var validataArr = {
+			focusArg : true,
+			user : ['^.{2,8}$','用户名验证不通过'],
+			password :  ['^.{2,8}$','密码验证不通过']
+		};
+		// 表单submit提交的方法
+		$('#RUI-form').submit(function(){
+			if(XjQuery.validate(validataArr)){
+				// alert('验证通过！');
+				XjQuery.mask({
+					hideAuto : true,
+					style : 'display: block;background-color: rgba(0,0,0,0);'
+				});
+				XjQuery.tips('验证通过！', 1200);
+				return false;
+			}else{
+				// alert('验证不通过！');	
+				return false;
+			}	
+		})
+
+	</script>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html style="width: 100%; overflow-x: hidden;" id='onsiteHtml'>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" id="scaleMeta" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<!-- IOS中Safari允许全屏浏览： -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<!-- IOS中Safari顶端状态条样式： -->
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<!-- 忽略将数字变为电话号码： -->
+<meta content="telephone=no" name="format-detection">
+<!-- 浏览器浏览模式转换==>极速、兼容、IE模式 -->
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<title>personal center</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="../css/normalize.css">
+<link rel="stylesheet" href="../css/font/iconfont.css">
+<link rel="stylesheet" href="../css/rui.css">
+<link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <script type="text/javascript">
+		(function(){
+			function htmlFontSize(){
+		    	document.getElementById('onsiteHtml').style.fontSize = document.body.clientWidth / 10 + 'px';
+	    	}
+	    	htmlFontSize();
+	    	window.onresize = function(){
+	    		setTimeout(htmlFontSize,200);
+	    	};
+		})();
+	</script>
+	<div class="containter">
+		<div class="main-content">
+
+
+			<!--头部bgein -->
+			<header class="RUI-head">
+				<div class="wk-b-ap head-box">
+					<div class="wk-b-ap head-left" onclick="window.history.go(-1);">
+						<i class="iconfont icon-left1"></i>
+					</div>
+					<h2 class="wk-b-ap head-title line-clamp">
+						<span>个人中心</span>
+					</h2>
+					<div id="popover-H" class="wk-b-ap head-right">
+						<i class="iconfont icon-moreandroid"></i>
+					</div>
+				</div>
+			</header>
+			<!--头部end -->
+
+
+			<div class="page-content" id="RUI-toucher">
+				<div class="RUI-toucher"><!-- toucher -->
+					
+					
+					<!-- 头部个人资料 -->
+					<div class="pc-head-wrap">
+						<ul class="RUI-listview" style="margin-top: 0;">
+							<li style="">
+								<div class="h-sculpture">
+									<img src="../images/tangtang.jpg">
+								</div>
+								<div class="lv-content">
+									<p class="lv-content-main">神秘的哈密瓜</p>
+									<p class="lv-content-sub wk-b"><i class="lv-content-icon iconfont icon-location"></i>金牌店长
+									</p>
+								</div>
+								<i class="lv-foot iconfont icon-right1"></i>
+							</li>
+						</ul>
+					</div>
+
+					
+					<!-- pc-main-list -->
+					<div class="pc-main-list shadow">
+						<ul class='RUI-listview slim-bd-b'>
+							<li>
+								<p class="lv-content line-clamp">微小店</p>
+								<i class="lv-foot iconfont icon-right1"></i>
+							</li>
+						</ul>
+						<ul class="RUI-lv-box main-list-wrap">
+							<li>
+								<i class="lv-box-icon iconfont icon-tmall"></i>
+								<p class="lv-box-title">商品管理</p>
+							</li>
+							<li>
+								<i class="lv-box-icon iconfont icon-order"></i>
+								<p class="lv-box-title">订单管理</p>
+							</li>
+							<li>
+								<i class="lv-box-icon iconfont icon-coupon"></i>
+								<p class="lv-box-title">我的卡券</p>
+							</li>
+							<li>
+								<i class="lv-box-icon iconfont icon-recharge"></i>
+								<p class="lv-box-title">我的收入</p>
+							</li>
+						</ul>
+					</div>
+
+					<!-- pc-sub-list -->
+					<div class="pc-sub-list">
+						<ul class='RUI-listview shadow'>
+							<li>
+								<span class="lv-head iconfont icon-cart"></span>
+								<p class="lv-content line-clamp">购物车</p>
+								<i class="lv-foot iconfont icon-right1"></i>
+							</li>
+							<li>
+								<span class="lv-head iconfont icon-service1"></span>
+								<p class="lv-content line-clamp">买家中心</p>
+								<i class="lv-foot iconfont icon-right1"></i>
+							</li>
+						</ul>
+
+						<ul class='RUI-listview shadow'>
+							<li>
+								<span class="lv-head iconfont icon-friend"></span>
+								<p class="lv-content line-clamp">社区</p>
+								<i class="lv-foot iconfont icon-right1"></i>
+							</li>
+						</ul>
+
+						<ul class='RUI-listview shadow'>
+							<li>
+								<span class="lv-head iconfont icon-shop"></span>
+								<p class="lv-content line-clamp">我要开店<span class="lv-sub-tip">（有货源即刻入驻）</span></p>
+								<i class="lv-foot iconfont icon-right1"></i>
+							</li>
+							<li>
+								<span class="lv-head iconfont icon-like1"></span>
+								<p class="lv-content line-clamp">关注微小店</p>
+								<i class="lv-foot iconfont icon-right1"></i>
+							</li>
+							<li>
+								<span class="lv-head iconfont icon-attention"></span>
+								<p class="lv-content line-clamp">公益</p>
+								<i class="lv-foot iconfont icon-right1"></i>
+							</li>
+							<li>
+								<span class="lv-head iconfont icon-order1"></span>
+								<p class="lv-content line-clamp">是否自动更新</p>
+								<div class="lv-switch">
+									<label for="#" class="RUI-switch">
+							            <input type="checkbox">
+							        </label>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<!--底部bgein -->
+		<footer class="RUI-foot slim-bd-t">
+			<div class="wk-b-ap foot-box">
+				<div class="foot-box-list">
+					<a href="ruiModel.html">
+						<i class="iconfont foot-icon icon-home"></i>
+						<span>首页</span>
+					</a>
+				</div>
+				<div class="foot-box-list">
+					<a>
+						<i class="iconfont foot-icon icon-logistics"></i>
+						<span>物流</span>
+					</a>
+				</div>
+				<div class="foot-box-list">
+					<a>
+						<i class="iconfont foot-icon icon-cart"></i>
+						<span>购物车</span>
+					</a>
+				</div>
+				<div class="foot-box-list foot-box-cur">
+					<a>
+						<i class="iconfont foot-icon icon-my"></i>
+						<span>我的淘宝</span>
+					</a>
+				</div>
+				<div class="foot-box-list">
+					<a>
+						<i class="iconfont foot-icon icon-more"></i>
+						<span>更多</span>
+					</a>
+				</div>
+			</div>
+		</footer>
+	    <!--底部end-->
+	</div>	
+</body>
+	<script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="../js/toucher.js"></script>
+	<script type="text/javascript" src="../js/XjQuery.js"></script>
+	<script type="text/javascript">
+		XjQuery.swipeFixedVertical('RUI-toucher', '.RUI-toucher');
+	</script>
+</html>
