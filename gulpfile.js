@@ -22,7 +22,8 @@ let minifycss=require('gulp-minify-css'),   //css压缩
 
 // let path = './app/MVCRequireJS'; // 项目路径
 // let path = './app/test'; // 项目路径
-let path = './app/mobileWebUtil'; // 项目路径
+//let path = './app/mobileWebUtil'; // 项目路径
+let path = './app/adminLayout'; // 项目路径
  
 gulp.task('connect', function() {
   connect.server({
@@ -30,27 +31,27 @@ gulp.task('connect', function() {
     host: '192.168.0.100',
     port: 2018,
     livereload: true,
-    middleware: function (connect, opt) {
-        return [
-            proxy('/api', {
-                target: 'http://localhost:8050',
-                changeOrigin:true
-            }),
-            proxy('/product', {
-                target: 'http://172.16.1.60:8080',
-                changeOrigin:true
-            }),
-            proxy('/bpauth', {
-                target: 'http://192.168.24.77:8080',
-                changeOrigin:true
-            })
-        ]
-    }
+    // middleware: function (connect, opt) {
+    //     return [
+    //         proxy('/api', {
+    //             target: 'http://localhost:8050',
+    //             changeOrigin:true
+    //         }),
+    //         proxy('/product', {
+    //             target: 'http://172.16.1.60:8080',
+    //             changeOrigin:true
+    //         }),
+    //         proxy('/bpauth', {
+    //             target: 'http://192.168.24.77:8080',
+    //             changeOrigin:true
+    //         })
+    //     ]
+    // }
   });
 });
  
 gulp.task('html', function () {
-  gulp.src(path + '/html/*.html')
+  gulp.src(path + '/*.html')
     .pipe(connect.reload());
 });
 gulp.task('stylus', function () {
@@ -75,13 +76,19 @@ gulp.task('sass', function() {
 
  
 gulp.task('watch', function () {
-  gulp.watch([path + '/html/*.html'], ['html']);
+  gulp.watch([path + '/*.html'], ['html']);
   gulp.watch([path + '/css/*.css'], ['stylus']);
   gulp.watch([path + '/js/*.js'], ['js']);
   gulp.watch([path + '/scss/*.scss'], ['sass']);
 });
  
 gulp.task('default', ['connect', 'watch']);
+
+
+
+
+
+
 
 
 // 打包操作

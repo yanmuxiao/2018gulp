@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html style="width: 100%; overflow-x: hidden;" id='onsiteHtml'>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" id="scaleMeta" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<!-- IOS中Safari允许全屏浏览： -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<!-- IOS中Safari顶端状态条样式： -->
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<!-- 忽略将数字变为电话号码： -->
+<meta content="telephone=no" name="format-detection">
+<!-- 浏览器浏览模式转换==>极速、兼容、IE模式 -->
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<title>calendar</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/font/iconfont.css">
+<link rel="stylesheet" href="css/rui.css">
+
+</head>
+<body>
+    <script type="text/javascript">
+		(function(){
+			function htmlFontSize(){
+		    	document.getElementById('onsiteHtml').style.fontSize = document.body.clientWidth / 10 + 'px';
+	    	}
+	    	htmlFontSize();
+	    	window.onresize = function(){
+	    		setTimeout(htmlFontSize,200);
+	    	};
+		})();
+	</script>
+
+	<div class="containter">
+		<div class="main-content">
+			<!--头部bgein -->
+			<header class="RUI-head">
+				<div class="wk-b-ap head-box">
+					<div class="wk-b-ap head-left">
+						<i class="iconfont icon-left1"></i>
+					</div>
+					<h2 class="wk-b-ap head-title line-clamp">
+						<span>rui Model</span>
+					</h2>
+					<div id="popover-H" class="wk-b-ap head-right">
+						<i class="iconfont icon-moreandroid"></i>
+					</div>
+				</div>
+			</header>
+			<!--头部end -->
+
+			<div class="page-content" id="RUI-toucher">
+				<div class="RUI-toucher"><!-- toucher -->
+
+					
+					<div style="margin: .5rem;">
+						<div class="item-buydate input-group slim-border">
+							<input id="" class="RUI-text" type="text" placeholder="请选择申购日期" readonly>
+						</div>
+					</div>
+
+					<div style="margin: .5rem;">
+						<div class="item-buydate input-group slim-border">
+							<input id="" class="RUI-text" type="text" placeholder="请选择申购日期" readonly>
+						</div>
+					</div>
+
+					<div style="margin: .5rem;">
+						<div class="item-buydate input-group slim-border">
+							<input id="" class="RUI-text" type="text" placeholder="请选择申购日期" readonly>
+						</div>
+					</div>
+
+
+				</div><!-- toucher -->
+			</div>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="js/toucher.js"></script>
+<script type="text/javascript" src="js/calendar.js"></script>
+<script type="text/javascript">
+	$('.item-buydate').mdater();
+</script>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!--<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">-->
+    <title>邮箱精灵</title>
+    <link href="../css/common/layout.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <!-- 首页 Start -->
+    <div class="mainContainer indexPage">
+        <!-- tip Start -->
+        <div class="dataCon01">
+            话费告急！赶紧办理话费充值吧！
+        </div>
+        <!-- tip End -->
+        <!-- dataCon02 Start -->
+        <div class="dataCon02">
+            <table>
+                <tr>
+                    <td>
+                        <div class="txtBox01">
+                            话费余额(元)
+                        </div>
+                        <div class="txtBox02">
+                            200.00
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-ellipsis" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;">
+                                <!--circle(cx="16",cy="50",r="10")-->
+                                <circle cx="16" cy="50" r="10" fill="#fff">
+                                    <animate attributeName="r" values="10;0;0;0;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="1s" repeatCount="indefinite" begin="0s"></animate>
+                                    <animate attributeName="cx" values="84;84;84;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="1s" repeatCount="indefinite" begin="0s"></animate>
+                                </circle>
+                                <circle cx="16" cy="50" r="10" fill="#fff">
+                                    <animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="1s" repeatCount="indefinite" begin="-0.5s"></animate>
+                                    <animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="1s" repeatCount="indefinite" begin="-0.5s"></animate>
+                                </circle>
+                                <circle cx="16" cy="50" r="10" fill="#fff">
+                                    <animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="1s" repeatCount="indefinite" begin="-0.25s"></animate>
+                                    <animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="1s" repeatCount="indefinite" begin="-0.25s"></animate>
+                                </circle>
+                                <circle cx="16" cy="50" r="10" fill="#fff">
+                                    <animate attributeName="r" values="0;10;10;10;0" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="1s" repeatCount="indefinite" begin="0s"></animate>
+                                    <animate attributeName="cx" values="16;16;50;84;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="1s" repeatCount="indefinite" begin="0s"></animate>
+                                </circle>
+                                <circle cx="16" cy="50" r="10" fill="#fff">
+                                    <animate attributeName="r" values="0;0;10;10;10" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="1s" repeatCount="indefinite" begin="0s"></animate>
+                                    <animate attributeName="cx" values="16;16;16;50;84" keyTimes="0;0.25;0.5;0.75;1" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" calcMode="spline" dur="1s" repeatCount="indefinite" begin="0s"></animate>
+                                </circle>
+                            </svg>
+                        </div>
+                        <!--<div class="txtBox07">-->
+                            <!--服务器繁忙-->
+                        <!--</div>-->
+                        <div class="txtBox03">
+                            <a href="#" class="com_btn01">
+                                立即充值
+                                <i class="com_tip"></i>
+                            </a>
+                        </div>
+                    </td>
+                    <td id="statePoor">
+                        <div class="progressBox opacity animated duration500">
+
+                        </div>
+                        <!--<div class="progressBox01 opacity animated duration2000">-->
+
+                        <!--</div>-->
+                        <!--<div class="progressBox02 opacity animated duration2000">-->
+
+                        <!--</div>-->
+                        <div class="canvas">
+                            <canvas id="canvas"></canvas>
+                            <input type="range" id="range" min="0" max="100" step="1" value="50"
+                                   style="display:none;">
+                        </div>
+                        <div class="txtBox04">
+                            剩余流量(MB)
+                        </div>
+                        <div class="txtBox05">
+                            102410
+                        </div>
+                        <!--<div class="txtBox06">-->
+                            <!--服务器繁忙-->
+                        <!--</div>-->
+                        <div class="txtBox08">
+                            剩余50.00%
+                        </div>
+                        <div class="txtBox03">
+                            <a href="#" class="com_btn02">
+                                充流量
+                                <i class="com_tip"></i>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="txtBox01">
+                            剩余语音(分钟)
+                        </div>
+                        <div class="txtBox02">
+                            759
+                        </div>
+                        <div class="txtBox03">
+                            <a href="#" class="com_btn01">
+                                套餐详情
+                                <i class="com_tip"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!-- 号码信息 Start -->
+            <div class="dataCon02_box01">
+                <div class="txt01">
+                    13927024929
+                </div>
+                <div class="txt02">
+                    广东广州
+                </div>
+            </div>
+            <!-- 号码信息 End -->
+            <!-- 更新信息 Start -->
+            <div class="update">
+                <img src="../images/update.png" alt="">
+            </div>
+            <!-- 更新信息 End -->
+            <!-- 查询时间 Start -->
+            <div class="dataCon02_box02">
+                查询时间:18:31
+            </div>
+            <!-- 查询时间 End -->
+            <!-- 剩余积分 Start -->
+            <div class="dataCon02_box03">
+                剩余积分:1831
+            </div>
+            <!-- 剩余积分 End -->
+        </div>
+        <!-- dataCon02 End -->
+        <!-- dataCon03 Start -->
+        <div class="dataCon03">
+            <div class="slick01">
+                <div>
+                    <a href="#">
+                        <img src="../images/adM01.jpg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="../images/adM01.jpg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="../images/adM01.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- dataCon03 End -->
+        <!-- dataCon04 Start -->
+        <div class="dataCon04">
+            <div class="dataCon04_title">
+                <span>流量办理专区</span>
+            </div>
+            <div class="dataCon04_list">
+                <a href="#" class="item">
+                    <img src="../images/icon01.png" alt="">
+                    <span class="txt">小时包</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon02.png" alt="">
+                    <span class="txt">无虑包</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon03.png" alt="">
+                    <span class="txt">无忧包</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon04.png" alt="">
+                    <span class="txt">叠加包</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon05.png" alt="">
+                    <span class="txt">特惠包</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon06.png" alt="">
+                    <span class="txt">流量直充</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon07.png" alt="">
+                    <span class="txt">流量套餐</span>
+                </a>
+            </div>
+        </div>
+        <!-- dataCon04 End -->
+        <!-- dataCon04 Start -->
+        <div class="dataCon04">
+            <div class="dataCon04_title">
+                精品业务
+            </div>
+            <div class="dataCon04_list">
+                <a href="#" class="item">
+                    <img src="../images/icon08.png" alt="">
+                    <span class="txt">咪咕视频</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon09.png" alt="">
+                    <span class="txt">和留言</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon10.png" alt="">
+                    <span class="txt">来电提醒</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon11.png" alt="">
+                    <span class="txt">和彩云流量包</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon12.png" alt="">
+                    <span class="txt">手机悦读会</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon13.png" alt="">
+                    <span class="txt">和彩印</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon14.png" alt="">
+                    <span class="txt">和阅读</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon15.png" alt="">
+                    <span class="txt">精品悦听包</span>
+                </a>
+            </div>
+        </div>
+        <!-- dataCon04 End -->
+        <!-- dataCon04 Start -->
+        <div class="dataCon04">
+            <div class="dataCon04_title">
+                常用服务
+            </div>
+            <div class="dataCon04_list">
+                <a href="#" class="item">
+                    <img src="../images/icon16.png" alt="">
+                    <span class="txt">账单服务</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon17.png" alt="">
+                    <span class="txt">订单查询</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon18.png" alt="">
+                    <span class="txt">变更套餐</span>
+                </a>
+                <a href="#" class="item">
+                    <img src="../images/icon19.png" alt="">
+                    <span class="txt">邮箱特权</span>
+                </a>
+            </div>
+        </div>
+        <!-- dataCon04 End -->
+        <!-- dataCon04 Start -->
+        <div class="dataCon04">
+            <div class="dataCon04_title">
+                优惠专区
+            </div>
+            <div class="slick02">
+                <div>
+                    <a href="#">
+                        <img src="../images/adM02.png" alt="">
+                        <span class="bg"></span>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="../images/adM02.png" alt="">
+                        <span class="bg"></span>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="../images/adM02.png" alt="">
+                        <span class="bg"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- dataCon04 End -->
+    </div>
+    <!-- 首页 Start -->
+</div>
+<!-- 弹框-选材料弹窗 Start -->
+<!--<div class="pop_module" id="popBox01">-->
+<!--<div class="com_pop_con pop_con01">-->
+<!--<div class="closeBtn closeBtn01"></div>-->
+<!--<div class="popBox01">-->
+<!--<div class="popBox01_title">-->
+<!--捕捉秘籍-->
+<!--</div>-->
+<!--<div class="popBox01_list">-->
+<!--<div class="item">-->
+<!--活动时间：即日起至X月X日-->
+<!--</div>-->
+<!--<div class="item">-->
+<!--活动规则：<br/>-->
+<!--1、每人每天可捕捉3只普通邮差；<br/>-->
+<!--2、通过定点、定时、扫图三种模式，有机会捕捉到稀有邮差；<br/>-->
+<!--3、邮差可向通讯录好友进行赠送；<br/>-->
+<!--4、集齐指定邮差即可兑换流量礼包，每人仅限兑换1次；<br/>-->
+<!--5、本次活动面向中国移动全品牌的用户，异网用户暂时不能参与活动；-->
+<!--</div>-->
+<!--<div class="item">-->
+<!--奖品说明：<br/>-->
+<!--1、奖品包括1G、500M、70M、10M四种流量面值；<br/>-->
+<!--2、我们将在活动结束后1个月内统一安排充值，敬请留意；<br/>-->
+<!--3、活动所获奖品不能兑换现金，中奖用户请注意查看中奖邮件了解奖品领取方法；-->
+<!--</div>-->
+<!--<div class="item">-->
+<!--4、所有中奖用户需同时满足以下条件，否则取消获奖资格：<br/>-->
+<!--①活动当月不出现销号、欠费情况；<br/>-->
+<!--②活动当月主叫通话费不少于4元，主叫通话时长不少于30分钟（10086等客服热线时长不在此列）；-->
+<!--</div>-->
+<!--<div class="item">-->
+<!--5、对于恶意参与活动的用户（包括但不限于：盗取他人密码登陆、使用程序等非人工行为参与活动），我方有权终止并取消其获奖资格；-->
+<!--</div>-->
+<!--<div class="item">-->
+<!--6、更多活动详情，可发邮件到service@139.com咨询。-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!-- 弹框-选材料弹窗 End -->
+<script src="../js/vendor.bundle.js"></script>
+<script src="../js/index.js"></script>
+</body>
+</html>
