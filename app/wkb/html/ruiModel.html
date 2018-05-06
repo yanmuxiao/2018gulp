@@ -19,29 +19,32 @@
 <link rel="stylesheet" href="../css/font/iconfont.css">
 <link rel="stylesheet" href="../css/rui.css">
 <link rel="stylesheet" href="../css/index.css">
+<script type="text/javascript">
+	(function(){
+		function htmlFontSize(){
+	    	// document.getElementById('onsiteHtml').style.fontSize = document.body.clientWidth / 10 + 'px';
+	    	var clientWidth = document.documentElement.clientWidth > 750 ? 750 : document.documentElement.clientWidth;
+	    	document.getElementById('onsiteHtml').style.fontSize = clientWidth / 10 + 'px';
+    	}
+    	htmlFontSize();
+    	window.onresize = function(){
+    		setTimeout(htmlFontSize,200);
+    	};
+	})();
+</script>
 </head>
 <body id="RUI-body">
-    <script type="text/javascript">
-		(function(){
-			function htmlFontSize(){
-		    	document.getElementById('onsiteHtml').style.fontSize = document.body.clientWidth / 10 + 'px';
-	    	}
-	    	htmlFontSize();
-	    	window.onresize = function(){
-	    		setTimeout(htmlFontSize,200);
-	    	};
-		})();
-	</script>
+    
 <div class="containter">
 	<div class="main-content">
 		<!--头部bgein -->
 		<header class="RUI-head">
 			<div class="wk-b-ap head-box">
 				<div class="wk-b-ap head-left">
-					<i class="iconfont icon-left1"></i>
+					<!-- <i class="iconfont icon-left1"></i> -->
 				</div>
 				<h2 class="wk-b-ap head-title line-clamp">
-					<span>rui Model</span>
+					<span>rui 移动端模板</span>
 				</h2>
 				<div class="wk-b-ap head-right">
 					<i class="iconfont icon-moreandroid"></i>
@@ -119,31 +122,31 @@
 	<footer class="RUI-foot slim-bd-t">
 		<div class="wk-b-ap foot-box">
 			<div class="foot-box-list foot-box-cur">
-				<a href="ruiModel.html">
+				<a href="javascript:;" data-href="ruiModel.html">
 					<i class="iconfont foot-icon icon-home"></i>
 					<span>首页</span>
 				</a>
 			</div>
 			<div class="foot-box-list">
-				<a>
+				<a href="javascript:;">
 					<i class="iconfont foot-icon icon-logistics"></i>
 					<span>物流</span>
 				</a>
 			</div>
 			<div class="foot-box-list">
-				<a>
+				<a href="javascript:;">
 					<i class="iconfont foot-icon icon-cart"></i>
 					<span>购物车</span>
 				</a>
 			</div>
 			<div class="foot-box-list">
-				<a>
+				<a href="javascript:;" data-href="personalCenter.html">
 					<i class="iconfont foot-icon icon-my"></i>
-					<span>我的淘宝</span>
+					<span>我的</span>
 				</a>
 			</div>
 			<div class="foot-box-list">
-				<a>
+				<a href="javascript:;">
 					<i class="iconfont foot-icon icon-more"></i>
 					<span>更多</span>
 				</a>
@@ -157,20 +160,11 @@
 	<script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script>
 	<script type="text/javascript" src="../js/toucher.js"></script>
 	<script type="text/javascript" src="../js/XjQuery.js"></script>
+	<script type="text/javascript" src="../js/index.js"></script>
 	<script type="text/javascript">
 
 
-		// $('.RUI-listview').on('click', 'li', function(){
-		// 	window.location.href = $(this).data('url');
-		// })
-
-		$('.RUI-listview li').each(function(){
-			util.toucher(this).on('singleTap', function(){
-				window.location.href = $(this).data('url');
-				return false;
-			})
-		})
-
+		
 
 	</script>
 </html>

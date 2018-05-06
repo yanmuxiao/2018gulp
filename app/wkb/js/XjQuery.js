@@ -178,7 +178,7 @@ var XjQuery = (function(){
 			$(this).blur(function(){
 				var _this = $(this);
 				setTimeout(function(){
-					 _this.next('.delete-btn')[0].style.display = 'none';
+					_this.next('.delete-btn')[0].style.display = 'none';
 				},90);
 			})
 		})

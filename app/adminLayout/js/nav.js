@@ -37,7 +37,9 @@ $.each(navs, function(index, value) {
 	var h = '<ul class="layout-ul-0">';
 	var f = '</ul>';
 	if(value.subMenu && false) {
-
+		var c = '<li  class="layout-li-0">' +
+		'<a href="javascript:;" data-url="' + value.href + '"><icon class="iconfont icon-' + value.icon + '"></icon>' + value.name + '</a href="javascript:;">' +
+		'</li>';
 	}else{
 		var c = '<li  class="layout-li-0">' +
 		'<a href="javascript:;" data-url="' + value.href + '"><icon class="iconfont icon-' + value.icon + '"></icon>' + value.name + '</a href="javascript:;">' +
